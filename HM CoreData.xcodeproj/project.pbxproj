@@ -14,7 +14,6 @@
 		8C55789929DE0144003AACB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C55789729DE0144003AACB8 /* LaunchScreen.storyboard */; };
 		8C5578A129DE0174003AACB8 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5578A029DE0174003AACB8 /* StorageManager.swift */; };
 		8C5578A329DE01AD003AACB8 /* TableTaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5578A229DE01AD003AACB8 /* TableTaskList.swift */; };
-		8C5578A529DE01FB003AACB8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5578A429DE01FB003AACB8 /* MainViewController.swift */; };
 		8C5578A929DF4346003AACB8 /* TaskList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8C5578A729DF4345003AACB8 /* TaskList.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +27,6 @@
 		8C55789A29DE0144003AACB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C5578A029DE0174003AACB8 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		8C5578A229DE01AD003AACB8 /* TableTaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableTaskList.swift; sourceTree = "<group>"; };
-		8C5578A429DE01FB003AACB8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8C5578A829DF4346003AACB8 /* TaskList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskList.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -46,9 +44,6 @@
 		8C55788029DE0144003AACB8 = {
 			isa = PBXGroup;
 			children = (
-				8C5578A029DE0174003AACB8 /* StorageManager.swift */,
-				8C5578A229DE01AD003AACB8 /* TableTaskList.swift */,
-				8C5578A429DE01FB003AACB8 /* MainViewController.swift */,
 				8C55788B29DE0144003AACB8 /* HM CoreData */,
 				8C55788A29DE0144003AACB8 /* Products */,
 			);
@@ -65,6 +60,8 @@
 		8C55788B29DE0144003AACB8 /* HM CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				8C5578A029DE0174003AACB8 /* StorageManager.swift */,
+				8C5578A229DE01AD003AACB8 /* TableTaskList.swift */,
 				8C55788C29DE0144003AACB8 /* AppDelegate.swift */,
 				8C55789229DE0144003AACB8 /* Main.storyboard */,
 				8C55789529DE0144003AACB8 /* Assets.xcassets */,
@@ -152,7 +149,6 @@
 				8C5578A329DE01AD003AACB8 /* TableTaskList.swift in Sources */,
 				8C55788F29DE0144003AACB8 /* SceneDelegate.swift in Sources */,
 				8C5578A129DE0174003AACB8 /* StorageManager.swift in Sources */,
-				8C5578A529DE01FB003AACB8 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
