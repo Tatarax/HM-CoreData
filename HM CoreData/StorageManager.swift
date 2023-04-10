@@ -14,7 +14,7 @@ class StorageManager {
     static let shared = StorageManager()
     
     //MARK: - Core Data
-    var persistentContainer: NSPersistentContainer = {
+   private var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "TaskList")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {

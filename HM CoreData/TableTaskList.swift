@@ -108,7 +108,7 @@ class TableTaskList: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let task = taskList[indexPath.row]
-        showUpdateAlert("Update task", "Ok, What?")
+        showUpdateAlert(task, "Update task", "What?")
         tableView.reloadRows(at: [indexPath], with: .automatic)
     }
     
@@ -132,15 +132,16 @@ class TableTaskList: UITableViewController {
         present(alert, animated: true)
     }
     
-    // Думаю ошибка тут. мне тут нужно взять уже сохраненной значение и поменять его на новое но не могу догадаться как это сделать.
-    private func showUpdateAlert(_ message: String, _ title: String) {
+   
+    private func showUpdateAlert(_ task: Task, _ message: String, _ title: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let updateAction = UIAlertAction(title: "Save", style: .destructive) { _ in
-            guard let task = alert.textFields?.first?.text, !task.isEmpty else {return}
-          
-         //   StorageManager.shared.update(<#Task#>,  task)
-            self.save(task)
+            guard let updateTask = alert.textFields?.first?.text, !updateTask.isEmpty else {return}
+            StorageManager.shared.update(task, updateTask)
+            
+            
+            self.save(updateTask)
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .default)
