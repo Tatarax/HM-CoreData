@@ -80,7 +80,7 @@ extension StorageManager {
     }
     
     func update(_ task: Task, _ newName: String) {
-        context.name = newName
+        task.name = newName
         saveTask()
     }
     

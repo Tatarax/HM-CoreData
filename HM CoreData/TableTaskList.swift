@@ -108,8 +108,9 @@ class TableTaskList: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let task = taskList[indexPath.row]
-        showUpdateAlert(task, "Update task", "What?")
-        tableView.reloadRows(at: [indexPath], with: .automatic)
+        showUpdateAlert(task, "Update task", "What?") {
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+        }
     }
     
     // MARK: - ShowAlerts
@@ -133,15 +134,15 @@ class TableTaskList: UITableViewController {
     }
     
    
-    private func showUpdateAlert(_ task: Task, _ message: String, _ title: String) {
+    private func showUpdateAlert(_ task: Task, _ message: String, _ title: String, completion: @escaping() -> ()) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let updateAction = UIAlertAction(title: "Save", style: .destructive) { _ in
             guard let updateTask = alert.textFields?.first?.text, !updateTask.isEmpty else {return}
             StorageManager.shared.update(task, updateTask)
+            let completion = completion
+            completion()
             
-            
-            self.save(updateTask)
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .default)
